@@ -1,0 +1,105 @@
+.promo-layouts {
+  background-image: url('../images/bg-5.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  width: 100%;
+  padding: em(130px) 0;
+
+  @media screen and (max-width: 767px) {
+    background-position: left;
+  }
+
+  .promo-title {
+    text-align: right;
+    padding-right: 60px;
+    .subtitle {
+      color: #ffffff;
+      font-size: em(40px);
+      line-height: 0.9;
+      font-weight: lighter;
+      font-style: italic;
+      font-family: var(--light);
+      display: block;
+      margin-bottom: 0;
+      margin-top: 0;
+      position: relative;
+      z-index: 2;
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
+      }
+    }
+
+    .item-title-head {
+      font-size: em(80px);
+      font-weight: bold;
+      font-family: var(--bold);
+      position: relative;
+      display: block;
+      color: var(--white-color);
+      font-style: italic;
+      text-transform: uppercase;
+      line-height: 80px;
+      z-index: 10;
+      span {
+        display: block;
+        color: var(--yellow-color);
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 40px;
+        line-height: 50px;
+      }
+    }
+
+    .title-small {
+      margin-top: 60px;
+
+      p {
+        font-size: 15px;
+        font-family: var(--light);
+        font-weight: lighter;
+        text-align: right;
+        color: var(--white-color);
+        span {
+          display: block;
+        }
+      }
+    }
+
+    .button {
+      text-align: center;
+      .btn {
+        background: var(--yellow-color);
+        border: none;
+        padding: em(14px) em(50px);
+        @include border-radius(0);
+        position: relative;
+        overflow: hidden;
+        color: #383a3e;
+
+        span {
+          position: relative;
+          z-index: 1;
+        }
+
+        &:before {
+          content: '';
+          width: 0%;
+          height: 100%;
+          background-color: var(--white-color);
+          border-color: var(--white-color);
+          @include transition(width 0.25s ease);
+          @include position(absolute, 0, 0, 0, 0);
+        }
+
+        &:hover {
+          color: #383a3e;
+          &:before {
+            @include transition(width 0.25s ease);
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

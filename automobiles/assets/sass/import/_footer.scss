@@ -1,0 +1,219 @@
+.footer {
+  padding: em(80px) 0 20px 0;
+  background-color: #383a3e;
+  color: #a6a6a6;
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 100%;
+  .subhead {
+    font-size: 1.714rem;
+    color: var(--white-color);
+    font-weight: bold;
+    font-family: var(--bold);
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  .left-footer {
+    .footer_title_regular {
+      display: block;
+      margin-bottom: 10px;
+      .footer_title_week {
+        font-size: 15px;
+        font-family: var(--light);
+        font-weight: lighter;
+        position: relative;
+        text-align: left;
+        width: 20%;
+        display: inline-block;
+      }
+      .footer_title_time {
+        font-size: 16px;
+        font-family: var(--light);
+        font-weight: lighter;
+        position: relative;
+        text-align: left;
+        // width: 20%;
+        color: var(--white-color);
+        display: inline-block;
+      }
+    }
+  }
+
+  .link-list-footer {
+    .link-list {
+      list-style: none;
+      display: block;
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          text-decoration: none;
+          font-size: 14px;
+          color: #a6a6a6;
+          @include transition(0.25s ease-in-out);
+
+          i {
+            font-size: 10px;
+            vertical-align: middle;
+            padding-right: 6px;
+            display: inline-block;
+          }
+
+          &:hover {
+            color: var(--yellow-color);
+            @include transition(0.25s ease-in-out);
+          }
+        }
+      }
+    }
+  }
+
+  .footer-letter {
+    p {
+      margin-bottom: 30px;
+      font-size: 14px;
+      color: #a6a6a6;
+      font-weight: lighter;
+      font-family: var(--light);
+    }
+
+    .form-inline {
+      .form-group {
+        background-color: #3e4145;
+        padding: 0;
+        position: relative;
+        @media screen and (max-width: 991px) {
+          width: 100%;
+        }
+        .form-control {
+          background-color: transparent;
+          border: none;
+          padding: 14px 20px;
+          color: var(--white-color);
+          @include border-radius(0);
+          &:focus {
+            outline: none;
+            box-shadow: none;
+            border: none;
+          }
+        }
+
+        .btn {
+          background: var(--yellow-color);
+          border: none;
+          padding: em(22px) em(30px);
+          @include border-radius(0);
+          position: relative;
+          overflow: hidden;
+          font-size: 13px;
+          font-family: var(--bold);
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #383a3e;
+
+          @media screen and (max-width: 991px) {
+            @include position(absolute, 0, 0, null, null);
+          }
+
+          span {
+            position: relative;
+            z-index: 1;
+          }
+
+          &:before {
+            content: '';
+            width: 0%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-color: rgba(255, 255, 255, 0.6);
+            @include transition(width 0.25s ease);
+            @include position(absolute, 0, 0, 0, 0);
+          }
+
+          &:hover {
+            color: #383a3e;
+            &:before {
+              @include transition(width 0.25s ease);
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .copyright {
+    p {
+      font-size: 14px;
+      font-family: var(--light);
+      font-weight: lighter;
+      position: relative;
+      text-align: center;
+      position: relative;
+      margin-top: 40px;
+      display: block;
+    }
+  }
+}
+
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  // text-indent: 100%;
+  text-align: center;
+  line-height: 60px;
+  white-space: nowrap;
+  background: #383a3e;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--yellow-color);
+  }
+
+  i {
+    color: var(--white-color);
+    font-size: 20px;
+  }
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: var(--yellow-color);
+  opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 60px;
+    width: 60px;
+    right: 30px;
+    bottom: 30px;
+  }
+}

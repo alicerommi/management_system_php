@@ -1,0 +1,81 @@
+html *
+{
+   font-family: "Arial" !important;
+}
+
+.btn {
+    font-family: "Arial" !important;
+}
+
+.fa, .far, .fas{
+    font-family: "Font Awesome 5 Free" !important;
+}
+
+#navbarContent .navbar_top_buttons_nav {
+    flex-direction: row;
+}
+
+.form-group lable, .card {
+    text-align: right;
+}
+
+.btn-top-red {
+	background:#E02128;
+	border-color:#E02128;
+	color:#383A3E;
+}
+
+.btn-top-red:hover {
+	background:#222222;
+	border-color:#222222;
+	color:#FFFFFF;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.tbl-sell-address tr td:nth-child(1){
+    width:25% !important;
+    text-align: right !important;
+}
+.tbl-sell-address tr td:nth-child(2){
+    width:25% !important;
+    text-align: right !important;
+}
+.tbl-sell-address tr td:nth-child(3){
+    width:25% !important;
+    text-align: right !important;
+}
+.tbl-sell-address tr td:nth-child(4){
+    width:25% !important;
+    text-align: right !important;
+}
+
+.txt-right{
+    text-align:right !important;    
+}
+
+.div-center-parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div-center-itm{
+    width:200px;
+    height:200px;
+    display:inline-block;
+    margin:10px;
+}
+
+.alert-danger{
+    color:white !important;
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+}
+
+.modal-header .close-left {
+    padding: 1rem 1rem;
+    margin: -1rem auto -1rem -1rem;
+}

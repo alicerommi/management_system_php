@@ -1,0 +1,117 @@
+.quality {
+  &-video {
+    background-image: url('../images/bg-2.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    margin: 0;
+    padding: 100px 0;
+    width: 100%;
+
+    @media screen and (max-width: 767px) {
+      background-position: right;
+    }
+
+    .columns-right-content {
+      width: 58%;
+      float: right;
+      padding-left: 60px;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        padding-left: 10px;
+      }
+
+      .subtitle {
+        color: #ffffff;
+        font-size: em(40px);
+        line-height: 0.9;
+        font-weight: lighter;
+        font-style: italic;
+        font-family: var(--light);
+        display: block;
+        margin-bottom: 0;
+        margin-top: 0;
+        position: relative;
+        z-index: 2;
+
+        @media screen and (max-width: 767px) {
+          font-size: 30px;
+        }
+      }
+
+      .item-title-head {
+        font-size: em(80px);
+        font-weight: bold;
+        font-family: var(--bold);
+        position: relative;
+        display: block;
+        color: var(--white-color);
+        font-style: italic;
+        text-transform: uppercase;
+        line-height: 80px;
+        z-index: 10;
+        span {
+          display: block;
+          color: var(--yellow-color);
+        }
+        @media screen and (max-width: 767px) {
+          font-size: 40px;
+          line-height: 50px;
+        }
+      }
+
+      .video-image {
+        position: relative;
+        width: 350px;
+        margin-top: -40px;
+        z-index: 0;
+        margin-left: 8rem;
+        overflow: hidden;
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          width: 100%;
+          margin-top: 00px;
+          margin-left: 0;
+        }
+        @media screen and (max-width: 767px) {
+          width: 100%;
+          margin-top: 00px;
+          margin-left: 0;
+        }
+
+        &:hover {
+          .video-popup {
+            transform: translate(-50%, -50%);
+            @include transition(0.25s ease);
+            opacity: 1;
+          }
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+
+        .video-popup {
+          @include position(absolute, 50%, null, null, 50%);
+          transform: translate(-50%, 170%);
+          background-color: var(--darking-color);
+          width: 60px;
+          height: 60px;
+          line-height: 60px;
+          text-align: center;
+          @include border-radius(100px);
+          color: var(--white-color);
+          text-decoration: none;
+          @include transition(0.25s ease);
+          opacity: 0;
+
+          &:hover {
+            background-color: var(--yellow-color);
+          }
+        }
+      }
+    }
+  }
+}
