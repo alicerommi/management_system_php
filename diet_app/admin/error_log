@@ -1,0 +1,12 @@
+[23-Jun-2018 07:24:28 UTC] PHP Warning:  include(includes/header.php): failed to open stream: No such file or directory in /home/qaraadc1/public_html/jobmatch/food/index.php on line 1
+[23-Jun-2018 07:24:28 UTC] PHP Warning:  include(includes/header.php): failed to open stream: No such file or directory in /home/qaraadc1/public_html/jobmatch/food/index.php on line 1
+[23-Jun-2018 07:24:28 UTC] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/qaraadc1/public_html/jobmatch/food/index.php on line 1
+[23-Jun-2018 07:24:28 UTC] PHP Warning:  include(includes/footer.php): failed to open stream: No such file or directory in /home/qaraadc1/public_html/jobmatch/food/index.php on line 63
+[23-Jun-2018 07:24:28 UTC] PHP Warning:  include(includes/footer.php): failed to open stream: No such file or directory in /home/qaraadc1/public_html/jobmatch/food/index.php on line 63
+[23-Jun-2018 07:24:28 UTC] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/qaraadc1/public_html/jobmatch/food/index.php on line 63
+[23-Jun-2018 07:24:32 UTC] PHP Warning:  include(includes/header.php): failed to open stream: No such file or directory in /home/qaraadc1/public_html/jobmatch/food/index.php on line 1
+[23-Jun-2018 07:24:32 UTC] PHP Warning:  include(includes/header.php): failed to open stream: No such file or directory in /home/qaraadc1/public_html/jobmatch/food/index.php on line 1
+[23-Jun-2018 07:24:32 UTC] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/qaraadc1/public_html/jobmatch/food/index.php on line 1
+[23-Jun-2018 07:24:32 UTC] PHP Warning:  include(includes/footer.php): failed to open stream: No such file or directory in /home/qaraadc1/public_html/jobmatch/food/index.php on line 63
+[23-Jun-2018 07:24:32 UTC] PHP Warning:  include(includes/footer.php): failed to open stream: No such file or directory in /home/qaraadc1/public_html/jobmatch/food/index.php on line 63
+[23-Jun-2018 07:24:32 UTC] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/qaraadc1/public_html/jobmatch/food/index.php on line 63
