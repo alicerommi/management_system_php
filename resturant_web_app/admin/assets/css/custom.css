@@ -1,0 +1,29 @@
+
+#login_page> .panel-heading{
+	background-color: #e4064e;
+}
+
+
+#recover_pass > .panel-heading{
+	background-color: #e4064e;
+}
+
+ .lower_width_th{width: 46px;}
+
+ #custom_modal_footer {
+ 	margin-top: 20px !important;
+ }
+ #back_btn{
+ 	margin-bottom: 20px !important;
+ }
+ .user_message_paragraph{
+ 	text-align: justify;
+ }
+
+ .actions_messages{
+ 	font-weight: 600 !important;
+ 	color:black !important;
+ }
+ .margin_bottom_10px{
+ 		margin-bottom: 10px;
+ }
