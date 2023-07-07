@@ -1,0 +1,30 @@
+﻿
+
+.center_div{
+    margin: 0 auto;
+    width:80% /* value of your choice which suits your alignment */
+}
+.form-group {
+
+    padding-top:20px;
+
+}
+.auto-style1 {
+             width: 475px;
+         }
+
+ html, body, .container-table {
+    height: 100%;
+}
+.container-table {
+    display: table;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+    
+}
+.text-muted {
+text-align:center;
+
+}

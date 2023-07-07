@@ -1,0 +1,3 @@
+this file is for searching members profile. fetch.php
+chnagepassword_form is for changing password of player from his profile.
+ 

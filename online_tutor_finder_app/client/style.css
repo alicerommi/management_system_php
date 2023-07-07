@@ -1,0 +1,535 @@
+body {background:#ffffff; margin:0px; padding:0px; font-family:Verdana, Geneva, sans-serif;}
+
+.floatleft {float:left;}
+.floatright {float:right;}
+.clear {clear:both;}
+
+.mainwraper {width:1000px; height:auto; margin:0px auto;}
+.gapwraper {width:1000px; height:10px; margin:0px auto; background-color:#2e9afd;}
+.headwraper {width:1000px; height:146px; background:#ffffff;}
+.logowraper {width:345px; height:93px; float:left; padding:8px 0px 0px 8px; font:Arial, Helvetica, sans-serif; font-size:24px;}
+.logowraper a{width:345px; height:93px;  display:block; text-decoration:none;}
+.topheader {width:300px; float:right; height:93px;}
+.likebtn {float:left; padding-top:5px;}
+.fbnumber {float:left; padding-top:5px; padding-left:7px;}
+.flag {float:left; padding-top:3px; padding-left:30px;}
+.register {float:left; padding-left:15px;}
+.searchwraper {width:auto; float:right; padding-right:15px; padding-top:30px;}
+.navwraper {width:990px; height:30px; background:url(../images/menu_bg.jpg) repeat-x; float:left; margin-top:10px; padding-left:10px; }
+.navwraper ul{margin:0px; padding:0px;}
+.navwraper ul li{list-style:none; float:left; font-size:13px; text-transform:uppercase; color:#ffffff; padding:6px 20px 0px 20px; border-right:1px solid #1c3672; height:24px;}
+.navwraper ul li a{color:#ffffff; text-decoration:none;}
+.middlewraper {width:980px; height:auto; float:left;  background:#ffffff; padding:10px;}
+.leftwraper {width:634px; height:auto; float:left;}
+.topbanner {width:628px; height:auto; float:left;}
+.newswraper {width:310px; float:left; height:auto;}
+.newsheading {font-size:20px; color:#19160e; padding:20px 0px 12px 10px;}
+
+.newsbox {width:302px; height:226px; background:url(../images/news_bg.jpg) no-repeat; font-size:12px; color:#4f4f4f; padding-top:2px; padding-left:8px;}
+
+.newsbox ul {margin:0px; padding:0px;}
+.newsbox ul li {list-style:none; background:url(../images/bullet.png) left center no-repeat; line-height:24px; width:275px; float:left; padding-left:20px;}
+.newsbox ul li a { text-decoration:none; color:#4f4f4f;} 
+.newsbox ul li a :hover{ text-decoration:underline;}
+.viewbtn{float:right; padding-right:8px;}
+.photogallery {width:auto; float:left;}
+.rightwraper {width:320px; float:left; padding-left:20px;}
+
+.scorewraper {width:310px; float:left; color:#4f4f4f;}
+.scoreheading {width:313px;  font-size:13px; color:#fff; background:#760000; padding:6px 0px 6px 8px;}
+.scorewraper ul{margin:0px; padding:0px;}
+.scorewraper ul li {list-style:none; border-bottom:1px solid #a06262; padding:7px; font-size:11px;}
+.scorewraper ul li a{color:#214cb8; text-decoration:none;}
+.scorewraper ul li a:hover{color:#214cb8; text-decoration:underline;}
+
+.result1wraper {width:310px; float:left; color:#4f4f4f; padding-top:10px;}
+.result1wraper ul{margin:0px; padding:0px;}
+.result1wraper ul li {list-style:none; border-bottom:1px solid #a06262; padding:7px; font-size:11px;}
+.result1wraper ul li a{color:#214cb8; text-decoration:none;}
+.result1wraper ul li a:hover{color:#214cb8; text-decoration:underline;}
+
+.schedule {font-size:10px; float:right; padding-top:10px;}
+.schedule a{color:#214cb8; text-decoration:none;}
+.schedule a:hover{color:#214cb8; text-decoration:underline;}
+.videoheading {font-size:20px; color:#19160e; padding:0px 0px 12px 0px;}
+.videobox {width:302px; height:226px; font-size:12px; color:#4f4f4f; padding-top:5px; padding-left:8px; border:1px solid #aeaeae;}
+.sponserbox {width:287px; height:auto; padding-top:5px; padding-left:8px; border:1px solid #aeaeae; padding:25px 0px 15px 15px; float:left;}
+.sponserbox img {border:1px solid #dbdbdb; margin-right:15px; margin-bottom:10px; float:left;}
+.teamwraper {964px; height:auto; padding:25px 0px; text-align:center; border:1px solid #aeaeae;}
+.footer_left{width:615px; float:left;}
+.footer_right{width:290px; float:right;}
+.footer_links{padding:0; font-size:11px;}
+.footer_links a{ color:#616161; text-decoration:none;}
+.footer_links a:hover{color:#616161; text-decoration:underline;}
+
+/*----------------------------textarea css ------------------*/
+.textarea {border:1px solid #787878; font-family:Verdana, Geneva, sans-serif; font-size:12px; color:#6f6f6f; padding:4px;}
+
+
+/*--------------------------------- Top slider css start here -------------------*/
+
+div.wrap {
+width : 993px;
+margin : 0 auto;
+text-align : left;
+}
+div#top div#nav {
+float : left;
+clear : both;
+width : 993px;
+height : 52px;
+margin : 22px 0 0;
+}
+div#top div#nav ul {
+float : left;
+width : 700px;
+height : 52px;
+list-style-type : none;
+}
+div#nav ul li {
+float : left;
+height : 52px;
+}
+div#nav ul li a {
+border : 0;
+height : 52px;
+display : block;
+line-height : 52px;
+text-indent : -9999px;
+}
+div#header {
+margin : -1px 0 0;
+}
+div#video-header {
+height : 683px;
+margin : -1px 0 0;
+}
+div#header div.wrap {
+height : 410px;
+}
+div#header div#slide-holder {
+z-index : 40;
+width : 628px;
+height : 420px;
+position : absolute;
+background:#000000;
+}
+div#header div#slide-holder div#slide-runner {
+top : 9px;
+left : 9px;
+width : 610px;
+height : 400px;
+overflow : hidden;
+position : absolute;
+}
+div#header div#slide-holder img {
+margin : 0;
+display : none;
+position : absolute;
+}
+div#header div#slide-holder div#slide-controls {
+left : 0;
+bottom : 0px;
+width : 610px;
+height : 79px;
+position : absolute;
+background:url(../images/slide-bg.png) repeat-x;
+color:#ffffff;
+font-size:24px;
+}
+div#header div#slide-holder div#slide-controls p.text {
+float : left;
+color : #fff;
+display : inline;
+margin : 15px 0 0 20px;
+}
+div#header div#slide-holder div#slide-controls p#slide-nav {
+float : right;
+height : 24px;
+display : inline;
+margin : 11px 15px 0 0;
+}
+div#header div#slide-holder div#slide-controls p#slide-nav a {
+float : left;
+width : 24px;
+height : 24px;
+display : inline;
+font-size : 11px;
+margin : 0 5px 0 0;
+line-height : 24px;
+font-weight : bold;
+text-align : center;
+text-decoration : none;
+background-position : 0 0;
+background-repeat : no-repeat;
+}
+div#header div#slide-holder div#slide-controls p#slide-nav a.on {
+background-position : 0 -24px;
+}
+div#header div#slide-holder div#slide-controls p#slide-nav a {
+background-image : url(images/silde-nav.png);
+}
+div#nav ul li a {
+background : url(images/nav.png) no-repeat;
+}
+
+.pageheading {font-size:20px; color:#19160e; padding:5px 0px 5px 0px; border-bottom:1px solid #c9c9c9; margin-bottom:5px;}
+.pageheading2 {font-size:20px; color:#19160e; padding:5px 0px 5px 10px; border-bottom:1px solid #c9c9c9; margin-bottom:5px;}
+
+.text{font-size:12px; color:#4F4F4F; text-align:justify; line-height:18px;}
+
+.contactform {padding-top:15px; padding-left:15px;}
+
+.forms_pad{padding:4px 0 4px 0; float:left; width:370px; margin:0px;}
+
+.name_field{width:150px; float:left; font-size:11px; color:#19160E; padding:5px 0 0 5px;}
+
+.textbox3{ border:1px solid #d9d9d9; height:18px; width:200px; font-size:11px; margin:0px; padding:4px 5px;}
+
+/*----------------------- top Slider Css ------------*/
+
+#slidernew {
+	position:relative;
+	height:400px;
+	padding:6px;
+	background:url(../images/top_bg.jpg) no-repeat;
+	width:616px;
+
+}
+	#slidernew a {
+		float:left;
+		position:absolute;
+	}
+	
+	#slidernew a img {
+		border:none;
+	}
+	
+	#slidernew a.show {
+		z-index:500
+	}
+
+	#slidernew .caption {
+		z-index:600; 
+		background-color:#000; 
+		color:#ffffff; 
+		height:55px; 
+		width:100%; 
+		position:absolute;
+		bottom:0;
+	}
+
+	#slidernew .caption .content {
+		margin:5px
+	}
+	
+	#slidernew .caption .content h3 {
+		margin:0;
+		padding:0;
+		color:#1DCCEF;
+	}
+	
+/*---------------------------------------- Bottom Slider Css ----------------------------*/
+
+ .example {
+    border: 1px solid #CCC;
+    background: #f2f2f2;
+    padding: 10px;
+  }
+  ul {
+    list-style-image:url(list-style.gif);
+  }
+  pre {
+    font-family: "Lucida Console", "Courier New", Verdana;
+    border: 1px solid #CCC;
+    background: #f2f2f2;
+    padding: 10px;
+  }
+  code {
+    font-family: "Lucida Console", "Courier New", Verdana;
+    margin: 0;
+    padding: 0;
+  }
+
+  #gallery {
+    padding: 15px;
+    background: #121410;
+  }
+  #descriptions {
+    position: relative;
+    height: 50px;
+    background: #EEE;
+    margin-top: 10px;
+    width: 640px;
+    padding: 10px;
+    overflow: hidden;
+  }
+    #descriptions .ad-image-description {
+      position: absolute;
+    }
+      #descriptions .ad-image-description .ad-description-title {
+        display: block;
+      }
+
+.innerleftwraper {width:253px; height:auto; float:left;}
+
+.innerscorewraper {width:245px; float:left; color:#4f4f4f; padding-bottom:25px;}
+.innerscoreheading {width:237px; height:24px; font-size:16px; color:#fff; background:#760000; padding:6px 0px 0px 8px;}
+.innerscorewraper ul{margin:0px; padding:0px;}
+.innerscorewraper ul li {list-style:none; border-bottom:1px solid #a06262; padding:7px; font-size:12px;}
+.innerscorewraper ul li a{color:#214cb8; text-decoration:none;}
+.innerscorewraper ul li a:hover{color:#214cb8; text-decoration:underline;}
+.innerrightwraper {width:700px; float:left; padding-left:20px;}
+.innerrightwraper .group_t img { max-width:100%; height:auto; display:block;}
+.innerrightwraper .group_t { text-align:center; }
+.innerheading {font-size:20px; color:#19160e; padding:0px 0px 12px 10px; border-bottom:1px solid #034091; width:697px; margin-bottom:15px;}
+
+.archive {width:245px; height:auto; float:left;}
+.archive ul{padding:0px; margin:0px;}
+.archive ul li{list-style:none; background:url(../images/bullet_1.png) left no-repeat; padding-left:20px;}
+.videowraper {width:336px; height:auto; background:#121410; float:left; margin-right:6px; margin-bottom:10px; padding:2px;}
+.videotext {font-size:12px; color:#ffffff; padding:10px; line-height:18px;}
+.teamlogo {float:left; border:1px solid #c2c2c2; margin-right:10px;}
+
+.teamtext {width:670px; color:#4f4f4f; font-size:12px; text-align:justify; float:left;}
+
+.teamheading {width:662px; height:20px; background:#760000; font-size:12px; color:#ffffff; padding:5px 0px 0px 8px; margin:15px 0px; float:left;}
+.playertext {width:670px; color:#7a7a7a; font-size:12px; text-align:justify; float:left; line-height:18px;}
+.viewlink a{color:#214cb8; text-decoration:none;}
+.viewlink a:hover{color:#214cb8; text-decoration:underline;}
+.playertext1 {width:670px; color:#7a7a7a; font-size:12px; text-align:justify; float:left; line-height:18px; border-bottom:1px dashed #949494; padding-bottom:15px; padding-top:10px;}
+.profiletext {width:670px; color:#4f4f4f; font-size:12px; text-align:justify; float:left; line-height:24px;}
+
+.averagewraper {width:544px; height:auto; float:left; margin:25px 0px 0px 55px;}
+.averagewraper .heading {width:655px; height:22px; background:#e0e5f9; padding:3px 0px 0px 5px; font-size:14px; color:#505050; margin-bottom:1px;}
+.averagewraper .heading1 {width:645px; height:22px; background:#eceef5; padding:3px 0px 0px 15px; font-size:12px; color:#505050; margin-bottom:1px;}
+.averagewraper .heading2 {width:645px; height:22px; background:#f1f3f9; padding:3px 0px 0px 15px; font-size:12px; color:#505050; margin-bottom:1px;}
+.match {width:76px; text-align:center; float:left;}
+.runs {width:76px; text-align:center; float:left;}
+.high {width:76px; text-align:center; float:left;}
+.avg {width:76px; text-align:center; float:left;}
+.hundred {width:76px; text-align:center; float:left;}
+.fifty {width:76px; text-align:center; float:left;}
+.inns {width:76px; text-align:center; float:left;}
+.no {width:76px; text-align:center; float:left;}
+.avg {width:76px; text-align:center; float:left;}
+
+.champwraper {width:696px; height:auto; float:left; margin:20px 0px 0px 5px;}
+.champwraper .heading {width:696px; height:22px; background:#e0e5f9; padding:3px 0px 0px 5px; font-size:14px; color:#505050; margin-bottom:1px;}
+.champwraper .heading1 {width:701px; height:22px; background:#eceef5; padding:3px 0px 0px 0px; font-size:12px; color:#505050; margin-bottom:1px;}
+.champwraper .heading2 {width:696px; height:22px; background:#f1f3f9; padding:3px 0px 0px 0px; font-size:12px; color:#505050; margin-bottom:1px;}
+.teams {width:250px; text-align:center; float:left;}
+.teams1 {width:115px; text-align:right; float:left;}
+.teams2 {width:34px; text-align:center; float:left;}
+.teams3 {width:126px; text-align:left; float:left;}
+.date {width:100px; text-align:center; float:left;}
+.time {width:65px; text-align:center; float:left;}
+.venue {width:175px; text-align:center; float:left;}
+.round{width:75px; text-align:center; float:left;}
+
+
+.heading_new{width:694px;  background-color:#f1f3f9 !important; padding:3px 0px 3px 7px !important; font-size:11px; color:#505050; margin-bottom:1px;}
+
+/*---------------------------- 26-12-2011-----------------*/
+
+.footer{font-size:11px; width:980px; padding:10px; border-top:1px solid #a3a3a3; float:left; color:#616161; text-transform:uppercase; background:#ffffff;}
+
+
+.navi ul { display:none; list-style:none; cursor:pointer;}
+.navi ul li{ background:none; cursor:pointer; font-weight:normal;}
+
+.navi li ~ul { padding-left:20px; }
+.navi li ~ul li{ padding-left:5px; }
+
+.navi { list-style:none; cursor:pointer;}
+.navi li { font-weight:bold; }
+.error_message {
+    color: #FF0000;
+    float: left;
+    font-size: 12px;
+    margin: 0;
+    padding: 4px 0;
+    width: 270px;
+}
+
+.innerheading1 {font-size:20px; color:#19160e; padding:12px 0px 2px 10px; border-bottom:1px solid #034091; width:697px; margin-bottom:15px;}
+.innerheading1 A{color:#19160e; text-decoration:none;}
+.playername{font-size:14px; color:#000000;}
+.playername A{ color:#000000; text-decoration:none;}
+
+
+/*------------------------------------------29-12-2011--------------------------*/
+.resultwraper {width:690px; height:auto; float:left; margin:10px 0px 0px 0px;font-size:11px;}
+.resultwraper .headings {width:690px; height:22px; background:#e0e5f9; padding:3px 0px 0px 5px; font-size:12px; color:#505050; margin-bottom:1px;}
+.resultwraper .headings1 {width:680px; height:22px; background:#eceef5; padding:3px 0px 0px 15px; font-size:11px; color:#505050; margin-bottom:1px;}
+.resultwraper .toss {width:auto; height:auto; padding:3px 0px 6px 15px; font-size:11px; color:#505050; float:left;}
+.name {width:200px; text-align:left; float:left;}
+.out {width:250px; text-align:left; float:left;}
+.fours {width:40px; text-align:center; float:left;}
+.totalscore {width:192px; text-align:left; float:left;}
+
+.resultwraper a{color:#214CB8; text-decoration:none;}
+.resultwraper a:hover{color:#214CB8; text-decoration:underline;}
+.extras {width:150px; text-align:center; float:left;}
+
+
+.forms_pad1 {padding:4px 0 4px 0; float:left; width:465px; margin:0px;}
+.name_field1 {width:210px; float:left; font-size:11px; color:#19160E; padding:5px 0 0 5px;}
+fieldset.sectionwrap{ /*fieldset that wraps around each form "page" */
+border-width:0;
+padding:5px;
+width:600px;
+}
+
+fieldset.sectionwrap2{ /*fieldset that wraps around each form "page" */
+border-width:0;
+padding:5px;
+width:487px;
+}
+
+legend{ /*title shown at top of each form page */font:bold 16px Arial;color: darkred;}
+
+.textbox4{ border:1px solid #d9d9d9; height:18px; width:200px; font-size:11px; margin:0px; padding:4px 5px;}
+.btn{ background: none repeat scroll 0 0 darkred;    border-radius: 5px 5px 5px 5px;    color: white;    cursor: pointer;    padding: 2px 5px; font-weight: bold;    text-align: center;    font-size: 12px;    line-height: 18px; font-family: Verdana,Geneva,sans-serif; border:0px;}
+
+/* ---------->>> jtip <<<---------------------------------------------------------------*/
+.formInfo a, .formInfo a:active, formInfo a:visited{
+	background-image:url(../images/Hint.png);
+	padding:5px 12px;
+	margin-left:5px;
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+.formInfo a:hover{
+	color:#660000;
+	text-decoration: none;
+}
+#JT_arrow_left{
+	background-image: url(../images/arrow_left.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	position: absolute;
+	z-index:101;
+	left:-12px;
+	height:23px;
+	width:10px;
+    top:-3px;
+}
+
+#JT_arrow_right{
+	background-image: url(../images/arrow_right.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	position: absolute;
+	z-index:101;
+	height:23px;
+	width:11px;
+    top:-2px;
+}
+
+#JT {
+	position: absolute;
+	z-index:100;
+	border: 2px solid #D24704;
+	background-color: #fff;
+}
+
+#JT_copy{
+	padding:10px 10px 10px 10px;
+	color:#333333;
+}
+
+.JT_loader{
+	background-image: url(../images/loader.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	width:100%;
+	height:12px;
+}
+
+#JT_close_left{
+	background-color: #D24704;
+	text-align: left;
+	padding-left: 8px;
+	padding-bottom: 5px;
+	padding-top: 2px;
+	font-weight:bold;
+}
+
+#JT_close_right{
+	background-color: #D24704;
+	text-align: left;
+	padding-left: 8px;
+	padding-bottom: 5px;
+	padding-top: 2px;
+	font-weight:bold;
+}
+
+#JT_copy p{
+margin:3px 0;
+}
+
+#JT_copy img{
+	padding: 1px;
+	border: 1px solid #D24704;
+}
+
+.jTip{
+cursor:help;
+font-size:10px;
+color:#FFF;
+}
+
+
+/* ----- add selectors here for font sizing ----- */
+#JT_close_left, #JT_close_right{font-size: 12px; color:#FFF; }
+#JT_copy p, #JT_copy ul{font-size: 10px;padding:0px; margin:0px;list-style:none;}	
+
+
+.statsheading {font-size:20px; color:#19160e; padding:0px 0px 12px 10px; border-bottom:1px solid #034091; width:930px; margin-bottom:0px;}
+.statswraper {width:950px; float:left; padding-left:20px;}
+.statsheadwraper {width:287px; height:auto; float:left; margin:20px 20px 0px 5px;}
+.statsheadwraper .headingstat {width:282px; height:22px; background:#e0e5f9; padding:3px 0px 0px 5px; font-size:14px; color:#505050; margin-bottom:1px;}
+.statsheadwraper .headingstat2 {width:277px; height:22px; background:#f1f3f9; padding:3px 0px 0px 10px; font-size:12px; color:#505050; margin-bottom:1px; font-size:12px; color:#505050; float:left;}
+.headingstat2 A{ color:#505050; text-decoration:none;}
+
+
+
+/*-----------------------------drop-down menu Css Start------------*/
+
+
+ul.menu {list-style:none; margin:0; font-size:12px; color:#fff; text-transform:uppercase; padding:0;}
+
+ul.menu * {margin:0; padding:0}
+
+ul.menu a {display:block; color:#ffffff; text-decoration:none}
+
+ul.menu li {position:relative; float:left;}
+
+ul.menu ul {position:absolute; top:30px; left:0;  display:none; opacity:0; list-style:none; background:#adc4f9;}
+
+ul.menu ul li {position:relative; border-top:none; width:200px; margin:0; font-size:10px;}
+
+ul.menu ul li a {display:block; height:auto; padding:5px 0px 5px 5px; width:217px;}
+
+ul.menu ul li a:hover {margin:0; padding:5px 0px 5px 5px; background:#223f81;}
+
+ul.menu ul ul {left:100px; top:-1px;}
+
+ul.menu .menulink {width:auto; z-index:1000;}
+
+ul.menu .menulink:hover, ul.menu .menuhover {text-decoration:none;color:#fff; }
+
+ul.menu .sub {background:#cda3d5; height:auto 204px 0px; }
+
+/*-----------------------------drop-down menu Css Start------------*/
+/************Legend CSS*****************//
+.legend_css {
+    background-color: #F3F3F3;
+    border: 1px solid #999999;
+    color: #B62E2E;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px;
+ }

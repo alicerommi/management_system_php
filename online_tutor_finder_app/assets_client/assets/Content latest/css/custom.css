@@ -1,0 +1,13 @@
+﻿/*Header color i.e h2*/
+        h2 {
+    color:white;
+    text-align:start;
+}
+        /**Only for home page*/
+        /* Set black background color, white text and some padding */
+    footer {
+      background-color: rgb(135, 0, 0);
+      color: white;
+    }
+ 
+ 
