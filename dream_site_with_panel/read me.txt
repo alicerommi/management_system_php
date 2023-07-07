@@ -1,0 +1,10 @@
+----------------------------Directory Structure----------------------
+1) User Website: Exists in the dreams folder (userside website) url will be (dreams/).
+2) Admin Side: Exists in dreams folders (Admin Side) You need to append a word "admin/" with "dreams/" i.e. dreams/admin/ (a login page will appear)
+3) Database: Exists in Databases Folder name the database credentials are written in attached word document. 
+
+Admin Authentication Details: (/admin/login.php) on this page you need to enter email and pass  which are given below:
+email:admin@dream.com
+pass:admin
+-------------------------------------Thanks------------------------------------------
+

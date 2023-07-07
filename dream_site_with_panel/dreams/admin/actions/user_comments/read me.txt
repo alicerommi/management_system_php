@@ -1,0 +1,2 @@
+these files are used for pagination in user comment page
+i.e. ajax and js folder
