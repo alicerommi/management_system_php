@@ -29,6 +29,12 @@
                         }
 
                     }
+
+                    if(isset($_GET['itemExists'])){
+                        if($_GET['itemExists']==1){
+                            echo '<div class="alert alert-warning">Item with this name and category is already exists</div>';
+                        }
+                    }
                     ?>
 
                     <div class="col-md-12 text-right" style="padding: 0px;">
@@ -40,7 +46,7 @@
                         <div class="input-group">
                           <label for="">Item Name</label>
                           <div class="input-group">
-                            <input class="form-control" type="text" name="itemName"  required maxlength="40">
+                            <input class="form-control" type="text" name="itemName" id="itemName"  required maxlength="40">
                           </div>
                         </div>
                         <div class="input-group" style="margin-top: 15px;">
@@ -48,7 +54,7 @@
                           <div class="input-group">
                            <!--  <input class="form-control" type="text" name="choose" value="" placeholder="Choose Categories" required> -->
                             <?php
-                            $query  = mysqli_query($conn,"SELECT* FROM category");
+                            $query  = mysqli_query($conn,"SELECT* FROM category where category_active=1");
                             echo '<select name="choosenCate" id="choosenCate" class="form-control">';
                             if(mysqli_num_rows($query)>0){
                               while($r = mysqli_fetch_assoc($query)){
@@ -66,7 +72,7 @@
                           </div>
                         </div>
                         <div class="input-group">
-                          <button type="submit" class="btn btn-primary btn-add" name="addItem">Add Items</button>
+                          <button type="submit" class="btn btn-primary btn-add" name="addItem" id="addItem">Add Items</button>
                         </div>
                       </form>
                     </div>
@@ -78,3 +84,14 @@
             <!-- End Container fluid  -->
 
   <?php include 'includes/footer.php';?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    // $(document).on('click','#addItem',function(){
+    //   var item_name = $("#itemName").val();
+    //   var cate_id = $("choosenCate").find(':selected').val();
+
+
+    // });
+  });//end ready function here
+
+</script>

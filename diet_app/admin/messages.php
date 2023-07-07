@@ -48,7 +48,7 @@
                             $message_id = $row['message_id'];
                             $message_uname = $row['message_uname'];
                             $message_email = $row['message_email'];
-                            $message_msg = substr($row['message_msg'],0,25);
+                            $message_msg = substr($row['message_msg'],0,20);
                             $message_recordDate = date("d-m-Y",strtotime($row['message_recordDate']));
 
                                 echo'<tr>

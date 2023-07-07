@@ -2,30 +2,30 @@
  //for fetching the plan items 
  include '../includes/database_connection.php';
  //for fetching the item flag
- if(isset($_POST['item_id']) && isset($_POST['dietplan_id']) )
+ if(isset($_POST['dplan_id']) )
  {
- 	$itemId = $_POST['item_id'];
- 	$dietplan_id = $_POST['dietplan_id'];
- 	$sql = "SELECT pf.* , itm.* from planfilter pf, items itm where pf.dietplan_id=$dietplan_id and itm.item_id=$itemId and pf.item_id=$itemId and planfilter_active=1";
+ 		$arr=array();
+ 	$dietplan_id = $_POST['dplan_id'];
+ 		// $sql  ="select * from (select items.item_id, items.item_name,items.item_active,planfilter.flag from items left join planfilter on items.item_id = planfilter.item_id and planfilter.dietplan_id=$dietplan_id and planfilter.planfilter_active=1) as A where A.item_active=1 order by A.item_id ASC";
+
+ 		$sql = "select * from (select * from ( select items.item_id, items.category_id ,items.item_name,items.item_active,planfilter.flag from items left join planfilter on items.item_id = planfilter.item_id and planfilter.dietplan_id=$dietplan_id and planfilter.planfilter_active=1) as A where A.item_active=1) as D left JOIN category on D.category_id=category.category_id ORDER by category.category_name , D.item_name";
+
  	$query =mysqli_query($conn,$sql);
- 	$row =mysqli_fetch_assoc($query);
- 	$flag = $row['flag'];
- 	$final = array(
- 		"flag"=>$flag,	
- 		"item_name"=>$row['item_name'],
- 	);
- 	echo json_encode($final);
+ 	while($row = mysqli_fetch_assoc($query)){
+		array_push($arr, $row);
+	}
+ 	echo json_encode($arr);
  }
 
 //get the plan details 
  if(isset($_POST['plan_id'])){
  	$plan_id = $_POST['plan_id'];
- 	// echo "SELECT * FROM `dietplan` WHERE `dietplan_id`=$plan_id";
- 	// die;
  	$query = mysqli_query($conn,"SELECT * FROM `dietplan` WHERE `dietplan_id`=$plan_id");
  	$row = mysqli_fetch_assoc($query);
  	echo json_encode($row);
  }
+
+ 
 //get all the dietplans
  if(isset($_POST['allplans']))
  {	
@@ -46,7 +46,13 @@
  	//$filter = 	$_POST['filter'];
  	//echo $filter;
  	//if($filter=="allowed"){
- 	$query = "SELECT pf.*,itm.* from  planfilter pf, items itm where pf.planfilter_active=1 and itm.item_id=pf.item_id and pf.dietplan_id=$dietplan_id  order by itm.item_id";
+ 	//$query = "SELECT pf.*,itm.* from  planfilter pf, items itm where pf.planfilter_active=1 and itm.item_id=pf.item_id and pf.dietplan_id=$dietplan_id  order by itm.item_id";
+
+ 	//$query  ="select * from (select items.item_id, items.item_name,items.item_active,planfilter.flag from items left join planfilter on items.item_id = planfilter.item_id and planfilter.dietplan_id=$dietplan_id and planfilter.planfilter_active=1) as A where A.item_active=1 order by A.item_id ASC";
+ 	$query = "select * from (select * from ( select items.item_id, items.category_id ,items.item_name,items.item_active,planfilter.flag from items left join planfilter on items.item_id = planfilter.item_id and planfilter.dietplan_id=$dietplan_id and planfilter.planfilter_active=1) as A where A.item_active=1) as D left JOIN category on D.category_id=category.category_id ORDER by category.category_name , D.item_name";
+
+ 	//die;
+
  //	}else{
  	//	 $query = "SELECT pf.*,itm.* from  planfilter pf, items itm where pf.planfilter_active=1 and itm.item_id=pf.item_id and pf.dietplan_id=$dietplan_id and  pf.flag!='allowed'";
  	//}
@@ -89,6 +95,27 @@ if(isset($_POST['item_id'])){
 }
 
 
+
+//get the all plans
+
+if(isset($_POST['getPlans'])){
+	$query = mysqli_query($conn,"select* from dietplan where dietplan_active=1");
+	echo ceil(mysqli_num_rows($query)/5);
+}
+
+//get paginated plans
+if(isset($_POST['start']) && isset($_POST['end'])){
+	$start = $_POST['start'];
+	$end = $_POST['end'];
+	// echo "select* from dietplan where dietplan_active=1 limit $start,$end";
+	// die;
+	$query = mysqli_query($conn,"select* from dietplan where dietplan_active=1 limit 5 offset $start");
+	$arr  = array();
+	while($row = mysqli_fetch_assoc($query)){
+			array_push($arr, $row);
+	}
+	echo json_encode($arr);
+}
 
 
  ?>

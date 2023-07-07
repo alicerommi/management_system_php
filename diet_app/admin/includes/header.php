@@ -74,7 +74,7 @@ include 'session_check.php';
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="#"><i class="ti-user"></i> Profile</a></li>
+                                   <!--  <li><a href="#"><i class="ti-user"></i> Profile</a></li> -->
                                     <li><a href="includes/logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
@@ -132,6 +132,16 @@ include 'session_check.php';
                          <li> <a  href="messages.php" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">User Messages</span></a>
 
                         </li>
+
+
+                                 <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-film"></i><span class="hide-menu">Slider Images</span></a>
+                                            <ul aria-expanded="false" class="collapse">
+                                            <li> <a  href="slider-images.php">Add & View Slider Images</a></li>
+                                           <!--  <li> <a  href="slider-images.php">Add Slider Images</a></li> -->
+
+                                 </ul>
+                                </li>
+
 
 
                          <li><a href="includes/logout.php"><i class="fa fa-power-off"></i> Logout</a></li>

@@ -1,9 +1,6 @@
 <?php include 'includes/header.php';?>
 <style type="text/css">
-
-
 /* Table Section Datatable */
-
 #addPlanFilterTable_length,
 #addPlanFilterTable_filter,
 #addPlanFilterTable_info,
@@ -60,13 +57,22 @@
             <div class="container-fluid">
                 <!-- Start Page Content -->
                 <div class="row">
+                  
 
                   <div class="col-md-12">
+                      <?php
+                      $DietPlanid=0;
+                      if(isset($_GET['planAdded']) && isset($_GET['dietplan_id'])){
+                        if($_GET['planAdded']==1){
+                          echo '<div class="alert alert-success">The Diet Plan has been added successfully! Now, Add Items In the Diet Plan</div>';
+                        }else if($_GET['planAdded']==0){
+                         echo '<div class="alert alert-warning">Error in adding diet plan</div>';
+                        }
+                        $DietPlanid = $_GET['dietplan_id']; 
+                      }
+                      
 
-
-                    <!--  <div class="col-md-12 text-right" style="padding: 0px;">
-                          <a class="btn btn-warning" href="view-planfilters.php"><i class="fa fa-eye"></i>&nbsp;View All Items Filters </a>
-                      </div> -->
+                    ?>
                       <?php
                      echo '<div class="alert alert-danger" id="item-error"></div>';
                      echo '<div class="alert alert-success" id="item-success"></div>';
@@ -74,23 +80,25 @@
 
                       <div class="card">
                             <div class="form-group">
-                             <label for="">Choose A Food Item</label>
+                             <label for="">Choose A Diet Plan</label>
                                 <div class="input-group">
-
                             <?php
-                            $query  = mysqli_query($conn,"SELECT* FROM items WHERE item_active=1");
-                            echo '<select name="choosenItem" id="choosenItem" class="form-control" required>';
-
+                          $query  = mysqli_query($conn,"SELECT* FROM dietplan where dietplan_active=1");
+                            echo '<select name="choosenPlan" id="choosenPlan" class="form-control" required>';
                             if(mysqli_num_rows($query)>0){
                               echo '<option selected disabled value="">Nothing Selected</option>';
-                              while($r = mysqli_fetch_assoc($query)){
-                                $item_id = $r['item_id'];
-                                $item_name = $r['item_name'];
-                                echo '<option value='.$item_id.'>'.$item_name.'</option>';
-                              }
-                            }else{
-                              echo '<option selected disabled> No Diet Plan has Been Added Yet</option>';
+                                while($mainRow = mysqli_fetch_array($query)){
+                                 
+                                  $plan_id =$mainRow['dietplan_id'];
+                                   $dietplan_name = $mainRow['dietplan_name'];
+                                   if($DietPlanid==  $plan_id )
+                                     echo '<option value='.$plan_id.' selected>'.$dietplan_name.'</option>';
+                                   else
+                                       echo '<option value='.$plan_id.' >'.$dietplan_name.'</option>';
+
                             }
+                            }else{
+                              echo '<option selected disabled> No Diet Plan has Been Added Yet</option>';}
                             echo '</select>';
 
 
@@ -99,44 +107,72 @@
                           </div>
                           </div>
 
+                         
+
+
+
+
                       </div>
-
                     <div class="card">
+                       <div class="form-group">
+                             <label for="">Show items base on category</label>
+                           <select name=""  id="choosenCate" class="form-control">
+                                <?php
+                            $query1  = mysqli_query($conn,"SELECT* FROM category where category_active=1");
+                            if(mysqli_num_rows($query1)>0){
+                             // echo '<option value="" selected disabled>Choose Category</option>'; 
+                             echo '<option value="all">ALL</option>'; 
+                              while($r2 = mysqli_fetch_assoc($query1)){
+                                $category_name = $r2['category_name'];
+                                $categoryID = $r2['category_id'];
+                                  echo '<option value='.$categoryID.'>'.$category_name.'</option>'; 
+                              }
+                            }else{
+                              echo '<option selected disabled> No category has Been Added Yet</option>';
+                            }
+                           
 
+                            ?>
+                      </select>
+                    </div>
                       <div class="table-responsive">
                         <table id="addPlanFilterTable" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                       
+
                         <thead>
                             <tr>
-                               <th> Diet Plan Name</th>
+                               <th>Item Name</th>
+                          <!--      <th>Item Category</th> -->
                                <th>Choose Status</th>
                                <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tableBody">
                           <?php
                           $Rowcounter=0;
-                           $query  = mysqli_query($conn,"SELECT* FROM dietplan where dietplan_active=1");
-                           echo '<input type="hidden" value='.mysqli_num_rows($query).' id="totalRows">';
-
+                          $query  = mysqli_query($conn,"SELECT* FROM items WHERE item_active=1");
                            if(mysqli_num_rows($query)>0){
-                                 while($mainRow = mysqli_fetch_array($query)){
+                            while($r = mysqli_fetch_array($query)){
                                   $Rowcounter++;
-                                  $plan_id =$mainRow['dietplan_id'];
-                                   $dietplan_name = $mainRow['dietplan_name'];
-                                 // echo $Rowcounter;
+                                    $item_id = $r['item_id'];
+                                    $item_name = $r['item_name'];
+                                    $category_id = $r['category_id'];
+
                             ?>
-                          <tr id="<?php echo $Rowcounter; ?>">
+                          <tr id="<?php echo $Rowcounter; ?>" data-id="<?php  echo $category_id."_".$item_id;?>" class="<?php  echo $category_id."_".$item_id;?>">
                             <td>
                            <div class="input-group">
 
-                                <p><span><?php  echo ucwords($dietplan_name); ?></span></p>
+                                <p><span><?php  echo ucwords($item_name); ?></span></p>
 
                             </div>
                           </td>
 
+
+                         
                             <td>
                                 <div class="form-group">
-                                  <select class="form-control chose_filter" id="<?php echo "select_cf".$Rowcounter; ?>"  data-id="<?php echo $plan_id;?>" >
+                                  <select class="form-control chose_filter" id="<?php echo "select_cf".$Rowcounter; ?>"  data-id="<?php echo $item_id;?>" >
                                        <option selected disabled value="">Choose Status</option>
                                       <option value="allowed">Allowed</option>
                                       <option value="not allowed">Not Allowed</option>
@@ -146,7 +182,7 @@
                             </td>
 
                             <td>
-                                <button class="btn btn-primary saveFilter" id="<?php echo "saveBtn".$Rowcounter; ?>">Save</button>
+                                <button class="btn btn-primary saveFilter" id="<?php echo "saveBtn".$Rowcounter; ?>" data-id="<?php echo $item_id; ?>" >Save</button>
                             </td>
                           </tr>
                           <?php

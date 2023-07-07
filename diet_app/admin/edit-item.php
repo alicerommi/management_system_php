@@ -11,11 +11,11 @@ include 'includes/header.php';?>
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Edit Foot Items</h3> </div>
+                    <h3 class="text-primary">Edit Food Items</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Foods</a></li>
-                        <li class="breadcrumb-item active">Edit Foot Items</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Foods Items</a></li>
+                        <li class="breadcrumb-item active">Edit Food Items</li>
                     </ol>
                 </div>
             </div>
@@ -25,6 +25,9 @@ include 'includes/header.php';?>
                 <!-- Start Page Content -->
                 <div class="row">
                   <div class="col-md-12">
+                     <div class="col-md-12 text-right" style="padding: 0px;">
+                          <a class="btn btn-warning" href="view-items.php"><i class="fa fa-eye"></i>&nbsp;View All Food Items</a>
+                      </div>
                     <?php
                     //show the messages
                     if(isset($_GET['itemUpdated'])){
@@ -38,7 +41,7 @@ include 'includes/header.php';?>
                     ?>
                     <div class="card">
                       <?php
-                      $query1= mysqli_query($conn,"SELECT itm.*,cat.category_id FROM items itm,category cat  where itm.item_id=$item_id");
+                      $query1= mysqli_query($conn,"SELECT* from items where item_id=$item_id and item_active=1");
                             $row1 = mysqli_fetch_array($query1);
                             $item_name = $row1['item_name'];
                             $category_id1 = $row1['category_id'];
@@ -66,7 +69,7 @@ include 'includes/header.php';?>
                                      {
                                       echo '<option value='.$category_id.' selected>'.$category_name.'</option>'; 
                                     }else{
-                                         echo '<option value='.$category_id.'>'.$category_name.'</option>'; 
+                                      echo '<option value='.$category_id.'>'.$category_name.'</option>'; 
                                     }
 
                               }

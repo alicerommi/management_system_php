@@ -14,9 +14,36 @@
   <link rel="stylesheet" href="css/materialize.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
 <style type="text/css">
+.modal-dialog{
+  min-width: 900px !important;
+}
+
+.item-category{
+      display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 14px !important;
+   text-shadow:0 4px 14px rgba(64, 160, 89, 0.48);
+    letter-spacing: 1px;
+    color :purple;
 
 
-  
+}
+@media screen and (max-width: 992px) {
+  .modal-dialog {
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+select[readonly] {
+  background: #eee;
+  pointer-events: none;
+  touch-action: none;
+}
     #success{
     padding: 10px 15px;
     background: rgba(76, 209, 55,.7);
@@ -48,9 +75,9 @@
     letter-spacing: 1px;
     background-color: transparent !important;
   }
-  
+
   .pricing-detail {
-    min-height: 600px; 
+    min-height: 600px;
   }
 
   .green {
@@ -73,6 +100,16 @@
     background: transparent !important;
   }
 
+  .black {
+    color: #000 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 13px !important;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+    background: transparent !important;
+  }
+
   .items-img {
     width: 24px;
     height: 22px;
@@ -80,13 +117,64 @@
     position: relative;
     top: -2px;
   }
+  .dropdown-selected .btn {
+  background-color: transparent;
+  border-color: #FF3D00;
+  color: #FF3D00;
+
+}
+
+.dropdown-selected ul li {
+  cursor: pointer;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.dropdown-selected ul li .fa {
+  color: #FF3D00;
+}
+
+.dropdown-menu {
+  min-width: 12.5rem !important;
+}
+
+.dropdown-selected ul .dropdown-item:hover {
+  background-color: (0, 0, 0, 0.4);
+  color: #FF3D00;
+}
+
+.dropdown-selected .btn:hover {
+  background-color: #FF3D00 !important;
+  border-color: #FF3D00 !important;
+  color: #fff !important;
+}
+
+.dropdown-selected .btn:focus {
+  background-color: #FF3D00 !important;
+  color: #fff !important;
+  border-color: #FF3D00 !important;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.dropdown-selected .btn:active {
+  background-color: #FF3D00 !important;
+  color: #fff !important;
+  border-color: #FF3D00 !important;
+}
+
 
 
 </style>
 
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="100" id="home">
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top navigation">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top navigation">
     <div class="container">
       <a class="navbar-brand" href="#">Diet Plan</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,10 +186,10 @@
             <a class="nav-link active" href="#home">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About Us</a>
+            <a class="nav-link" href="about.php">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#pricing">Diet Plan</a>
+            <a class="nav-link" href="diet-plan.php">Diet Plan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact Us</a>
@@ -111,100 +199,78 @@
     </div>
   </nav>
 
+
   <!-- Start: Slider Section -->
   <div class="slider">
    <ul class="slides">
-     <li>
-       <img src="images/slider/01.jpg"> <!-- random image -->
+      
+    <?php
+    //show images in sldier 
+
+      $query =  mysqli_query($conn,"SELECT* FROM slider_images WHERE image_active=1");
+      if(mysqli_num_rows($query)>0){
+          while($row = mysqli_fetch_array($query)){
+            $image_id   = $row['image_id'];
+            $image_heading = $row['image_heading'];
+            $image_para = $row['image_para'];
+            $image_name   = "admin/uploads/slider_images/".$row['image_name'];
+            echo '<li>
+               <img src="'.$image_name.'">
+               <div class="caption center-align">
+                 <h3>'.$image_heading.'</h3>
+                 <h5 class="light grey-text text-lighten-3">'.$image_para.'</h5>
+               </div>
+             </li>';
+          }
+      }
+    ?>
+     <!-- <li>
+       <img src="images/slider/01.jpg">
        <div class="caption center-align">
          <h3>This is our big Tagline!</h3>
          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
        </div>
-     </li>
-     <li>
-       <img src="images/slider/02.jpg"> <!-- random image -->
-       <div class="caption left-align">
-         <h3>Left Aligned Caption</h3>
-         <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-       </div>
-     </li>
-     <li>
-       <img src="images/slider/03.jpg"> <!-- random image -->
-       <div class="caption right-align">
-         <h3>Right Aligned Caption</h3>
-         <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-       </div>
-     </li>
-     <li>
-       <img src="images/slider/04.jpg"> <!-- random image -->
-       <div class="caption center-align">
-         <h3>This is our big Tagline!</h3>
-         <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-       </div>
-     </li>
+     </li> -->
+     
    </ul>
  </div>
   <!-- End: Slider Section -->
 
-  <!-- Start: About Page Section -->
-  <div class="about-us" id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <div class="heading">
-            <h2>About <span>Us</span></h2>
-          </div>
-          <div class="title">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End: About Page Section -->
   <!-- Start: Price Table Section -->
   <div class="pricing-table" id="pricing">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 text-center">
           <div class="heading">
-            <h2>Choose Your <span>Plan</span></h2>
+              <h2>Compare Your <span>Plans</span></h2>
           </div>
           <p id="error-msg"></p>
           <p id="error-msg2"></p>
-          <div class="select-option"  style="    border-bottom: 1px solid #ccc;
-    padding-bottom: 40px;     margin-bottom: 20px;">
+
+          
 
 
+         
+<!--  <div class="select-option"  id="selectorFoodItems" style="    border-bottom: 1px solid #ccc;padding-bottom: 40px;     margin-bottom: 20px;">
               <div class="select-post-items">
                     <div class="select-list">
                       <select class="form-control" id="foodItems">
                         <option value="" disabled selected value="">Choose Food Item</option>
-                          <?php
-                              $query = mysqli_query($conn,"select* from items where item_active=1");
-                              if(mysqli_num_rows($query)>0){
-                                while($row = mysqli_fetch_array($query)){
-                                    $item_id = $row['item_id'];
-                                    $item_name = $row['item_name'];
-                                    echo '<option value ='.$item_id.' id="item_'.$item_id.'">'.ucwords($item_name).'</option>';
-                                }//end while loop here
-                              }
-                            ?>
                       </select>
                     </div>
-                    <div class="button">
-                      <button class="btn btn-primary addItemBTN" type="button"  id="AddItem" name="button">Add</button>
-                    </div>
+                 
 
                   </div>
-                </div>
+
+
+                </div> -->
 
 
         </div>
-      <!--   <div class="col-md-12"> -->
-          
+        <div class="col-md-12">
+
         <div class="pricing-col">
-          <!-- <div class="col-md-3">   -->
+          <div class="col-md-3">
              <div class="pricing-table-details">
                    <div class="select-list">
                   <select class="form-control selectedPlan" id="dropdownplan1"  >
@@ -217,12 +283,12 @@
                           $dietplan_description  = $row['dietplan_description'];
                           echo '<option value="div1" id="div1dietplan'.$dietplan_id.'" data-id='.$dietplan_id .'>'.$dietplan_name.'</option>';
                         }
-                     ?> 
+                     ?>
                   </select>
                 </div>
-                  
+
                 <div class="pricing-detail" id="plan1">
-                  
+
 
                   <div class="pricing-head">
                     <div class="icon">
@@ -230,7 +296,10 @@
                     </div>
                     <h2 id="plan1PlanName">DietPlan 1</h2>
                     <p id="plan1PlanDescription">Lorem ipsum dolor sit amet</p>
-                      
+
+                       <button type="button" class="view-btn" data-toggle="modal" data-target="#modalplan" id="modalBtn1" data-id="">View More</button>
+
+
                       <select class="form-control select-details-plan" id="selectDiv1Plans">
                         <!-- <option value="1">dietplan1</option>
                         <option value="2">dietplan2</option> -->
@@ -247,13 +316,22 @@
                       <li class="list-items"><p>Lorem Ipsum 05</p> <span class="font-icon"><i class="fa fa-times"></i></span></li>
                     </ul>
                   </div>
-                 
+
                 </div>
               </div>
-           <!--  </div>
 
 
-            <div class="col-md-3">  --> 
+
+
+
+
+
+
+
+           </div>
+
+
+            <div class="col-md-3">
              <div class="pricing-table-details">
                  <div class="select-list">
                   <select class="form-control selectedPlan" id="dropdownplan2"  >
@@ -266,7 +344,7 @@
                           $dietplan_description  = $row['dietplan_description'];
                           echo '<option  value="div2" data-id='.$dietplan_id .' id="div2dietplan'.$dietplan_id.'" >'.$dietplan_name.'</option>';
                         }
-                     ?> 
+                     ?>
                   </select>
                 </div>
                 <div class="pricing-detail" id="plan2">
@@ -276,10 +354,8 @@
                     </div>
                    <h2 id="plan2PlanName">DietPlan 2</h2>
                     <p id="plan2PlanDescription">Lorem ipsum dolor sit amet</p>
-
+                    <button type="button" class="view-btn" data-toggle="modal" data-target="#modalplan" id="modalBtn2" data-id="">View More</button>
                      <select class="form-control select-details-plan" id="selectDiv2Plans">
-                        <!-- <option value="1">dietplan1</option>
-                        <option value="2">dietplan2</option> -->
                       </select>
                   </div>
                   <div class="pricing-list">
@@ -293,9 +369,9 @@
                   </div>
                 </div>
               </div>
-        <!--     </div> -->
+            </div>
 
-            <!-- <div class="col-md-3">  --> 
+            <div class="col-md-3">
              <div class="pricing-table-details">
                  <div class="select-list">
                   <select class="form-control selectedPlan" id="dropdownplan3" >
@@ -309,7 +385,7 @@
                           $dietplan_description  = $row['dietplan_description'];
                           echo '<option  value="div3" data-id='.$dietplan_id .'  id="div3dietplan'.$dietplan_id.'" >'.$dietplan_name.'</option>';
                         }
-                     ?> 
+                     ?>
                   </select>
                 </div>
 
@@ -320,7 +396,7 @@
                     </div>
                       <h2 id="plan3PlanName">DietPlan 3</h2>
                     <p id="plan3PlanDescription">Lorem ipsum dolor sit amet</p>
-
+<button type="button" class="view-btn" data-toggle="modal" data-target="#modalplan" id="modalBtn3" data-id="">View More</button>
                      <select class="form-control select-details-plan" id="selectDiv3Plans">
                         <!-- <option value="1">dietplan1</option>
                         <option value="2">dietplan2</option> -->
@@ -335,12 +411,12 @@
                       <li class="list-items"><p>Lorem Ipsum 05</p> <span class="font-icon"><i class="fa fa-times"></i></span></li>
                     </ul>
                   </div>
-                 
+
                 </div>
               </div>
-           <!--  </div>
+            </div>
 
-            <div class="col-md-3">   -->
+            <div class="col-md-3">
              <div class="pricing-table-details">
                 <div class="select-list">
                   <select class="form-control selectedPlan" id="dropdownplan4"  >
@@ -353,7 +429,7 @@
                           $dietplan_description  = $row['dietplan_description'];
                           echo '<option   value="div4" data-id='.$dietplan_id .'  id="div4dietplan'.$dietplan_id.'" >'.$dietplan_name.'</option>';
                         }
-                     ?> 
+                     ?>
                   </select>
                 </div>
                 <div class="pricing-detail" id="plan4">
@@ -363,7 +439,7 @@
                     </div>
                      <h2 id="plan4PlanName">DietPlan 4</h2>
                     <p id="plan4PlanDescription">Lorem ipsum dolor sit amet</p>
-
+<button type="button" class="view-btn" data-toggle="modal" data-target="#modalplan" id="modalBtn4" data-id="">View More</button>
                      <select class="form-control select-details-plan" id="selectDiv4Plans">
                         <!-- <option value="1">dietplan1</option>
                         <option value="2">dietplan2</option> -->
@@ -386,58 +462,46 @@
 
 
 
-<div class="pricing-table-details">
-                <div class="select-list">
-                  <select class="form-control selectedPlan" id="dropdownplan5"  >
-                     <?php
-                        $query = mysqli_query($conn,"SELECT * FROM `dietplan` WHERE `dietplan_active`=1");
-                         echo '<option  disabled selected>Select A Plan</option>';
-                        while($row = mysqli_fetch_array($query)){
-                          $dietplan_id  = $row['dietplan_id'];
-                          $dietplan_name  = $row['dietplan_name'];
-                          $dietplan_description  = $row['dietplan_description'];
-                          echo '<option   value="div5" data-id='.$dietplan_id .' id="div5dietplan'.$dietplan_id.'"  >'.$dietplan_name.'</option>';
-                        }
-                     ?> 
-                  </select>
-                </div>
-                <div class="pricing-detail" id="plan5">
-                  <div class="pricing-head">
-                    <div class="icon">
-                      <img src="images/icons/01.png" alt="">
-                    </div>
-                     <h2 id="plan5PlanName">DietPlan 5</h2>
-                    <p id="plan5PlanDescription">Lorem ipsum dolor sit amet</p>
-
-                     <select class="form-control select-details-plan" id="selectDiv5Plans">
-                        <!-- <option value="1">dietplan1</option>
-                        <option value="2">dietplan2</option> -->
-                      </select>
-                  </div>
-                  <div class="pricing-list">
-                    <ul class="food-items" id="planItemsDiv5">
-                      <li class="list-items"><p>Lorem Ipsum 01</p> <span class="font-icon"><i class="fa fa-times"></i></span></li>
-                      <li class="list-items"><p>Lorem Ipsum 02</p> <span class="font-icon"><i class="fa fa-times"></i></span></li>
-                      <li class="list-items"><p>Lorem Ipsum 03</p> <span class="font-icon"><i class="fa fa-times"></i></span></li>
-                      <li class="list-items"><p>Lorem Ipsum 04</p> <span class="font-icon"><i class="fa fa-times"></i></span></li>
-                      <li class="list-items"><p>Lorem Ipsum 05</p> <span class="font-icon"><i class="fa fa-times"></i></span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
 
 
-
-
-         <!--    </div> -->
+            </div>
 
 
           </div>
-      <!--   </div> -->
+        </div>
       </div>
     </div>
   </div>
   <!-- End: Price Table Section -->
+
+
+                     <!--Start The Modal -->
+                      <div class="modal fade" id="modalplan">
+                        <div class="modal-dialog" >
+                          <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title"></h4>
+                              <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body" id="planFullDescription">
+                              <p>
+                              </p>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <!-- END The Modal -->
+
 
   <!-- Start: Contact Section -->
  <div class="contact-section" id="contact">
@@ -480,7 +544,7 @@
                      </div>
                      <div class="form-group" style="padding: 0;">
                        <!-- <label for="form-contact-message">Your Message<em>*</em></label> -->
-                       <textarea class="form-control" id="form-contact-message" rows="3" name="form-contact-message" required maxlength="500" placeholder="Enter Your Message" style=" resize: none;"></textarea>
+                       <textarea class="form-control" id="form-contact-message" rows="3" name="form-contact-message" required maxlength="500" placeholder="Enter Your Message (maxlength:500)" style=" resize: none;"></textarea>
                      </div>
                        <div class="form-group text-right" style="padding: 0;">
                          <button class="btn btn-success" type="submit" name="contactForm"  id="contactForm">Send</button>
@@ -490,7 +554,7 @@
                </div>
            </div>
          </div>
-        
+
        </div>
      </div>
    </div>
@@ -540,7 +604,7 @@
               <h5><i class="fa fa-envelope-o"></i> Email Address</h5>
               <p>contact@arksols.com</p>
             </div>
-       
+
           </div>
         </div>
         <div class="col-md-3">
@@ -569,6 +633,7 @@
 
   <!-- All Jquery -->
   <script src="js/jquery-3.2.1.min.js"></script>
+   <script src="js/popper.min.js"></script>
   <!-- Bootstrap Js -->
   <script src="js/bootstrap.min.js"></script>
   <!-- Main Js -->
@@ -606,11 +671,49 @@
                   $("#error").html("Error in sending Message");
                 }
             }
-         });  
+         });
          e.preventDefault();
     });
   });
   </script>
 <script type="text/javascript" src="js/file.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+
+      var arr_ids = [];
+      var arr_names = [];
+      $('#choosenCate li').each(function() {
+        var id = this.id;
+        var name = $(this).text();
+          arr_ids.push(id);
+           arr_names.push(name);
+      });
+
+$(document).on('click','.dropdown-item',function(){
+        var category_name = $(this).text();
+        var category_id = $(this).attr('id');
+        if(category_id !="cat_all"){
+        $('.dropdown-menu').css("display","block");
+        $('.dropdown-menu:focus').css("display","block");
+        $("#"+category_id).empty().append(category_name+"<i class='fa fa-check'>");
+      }
+       else{
+        var size =  $("#choosenCate li").length;
+          $('.dropdown-menu').css("display","block");
+        $('.dropdown-menu:focus').css("display","block");
+               $("#choosenCate").empty();
+               $("#choosenCate").append('<li class="dropdown-item" id="cat_all">ALL<i class="fa fa-check"></li>');
+            for(var t=1;t<arr_ids.length;t++){
+              var id = arr_ids[t];
+              var name = arr_names[t];
+               $("#choosenCate").append('<li class="dropdown-item" id="'+id+'">'+name+"<i class='fa fa-check'></li>");
+            }
+
+       }//end else here              
+  });
+  });
+</script>
+
+
 </body>
 </html>

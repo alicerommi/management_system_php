@@ -69,7 +69,11 @@
   </div>
   <!-- End: Login Wrapper -->
   <!-- Bootstrap tether Core JavaScript -->
-  <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="js/jquery-3.2.1.min.js">
+    
+  </script><script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+  </script><script src="js/lib/bootstrap/js/popper.min.js"></script>
   <script>
     function ValidateUser() {
       var textBox = document.getElementById("password");

@@ -122,7 +122,7 @@
   background-color: #FBE9E7;
   margin-top: 1.2em;
   width: 100%;
-  padding: 6em 0 2em 0; }
+  padding: 10em 0 2em 0; }
   .about-us .heading {
     margin-bottom: 35px; }
     .about-us .heading h2 {
@@ -200,7 +200,7 @@
         padding: 10px;
         margin-bottom: 3em;
         opacity: .1;
-        width: 225px;
+        width: 100%;
         margin-right: 10px;
         min-height: 500px; }
         .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-head {
@@ -208,13 +208,15 @@
           border-radius: 15px;
           padding: 5px 0;
           text-align: center;
-          margin-bottom: 1.5em; }
+          margin-bottom: 1.5em;
+          min-height: 300px;
+        }
           .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-head .icon {
             text-align: center;
             padding-top: 1.5em;
             padding-bottom: 1em; }
           .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-head h2 {
-            font-size: 28px;
+            font-size: 23px;
             font-weight: 500;
             font-family: "Montserrat", sans-serif;
             font-style: normal;
@@ -228,7 +230,23 @@
             font-style: normal;
             position: relative;
             vertical-align: center;
-            color: #2f3640; }
+            color: #2f3640;
+            width: 180px;
+            margin: 0 auto;
+            min-height: 70px;
+           }
+           .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-head .view-btn {
+             padding: 3px 6px;
+             font-size: 9px;
+             font-family: "Montserrat", sans-serif;
+             font-weight: 600;
+             color: #fff;
+             background-color: #FF3D00;
+             border: 1px solid #FF3D00;
+             border: none;
+             border-radius: 2px;
+             margin-bottom: 10px;
+           }
         .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-list {
           text-align: center; }
           .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-list ul {
@@ -254,6 +272,27 @@
                 right: 10%; }
                 .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-list ul li .font-icon .fa {
                   color: #FF3D00; }
+
+                .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-list ul li .allowed-icon {
+                  position: absolute;
+                  right: 6%;
+                  color: #3AD600;
+                }
+                .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-list ul li .notallowed-icon {
+                  position: absolute;
+                  right: 6%;
+                  color: #FC0606;
+                }
+                .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-list ul li .cautionary-icon {
+                  position: absolute;
+                  right: 6%;
+                  color: #F79F1F;
+                }
+                .pricing-table .pricing-col .pricing-table-details .pricing-detail .pricing-list ul li .unfdefined-icon {
+                  position: absolute;
+                  right: 6%;
+                  color: #000;
+                }
         .pricing-table .pricing-col .pricing-table-details .pricing-detail .select-option {
           display: -webkit-flex;
           display: -ms-flex;
@@ -675,7 +714,7 @@
     width: 180px;
     z-index: 1;
     top: 40%;
-       left: 6%;
+       left: 13%;
 }
 
 #selectDiv1Plans{
@@ -686,7 +725,7 @@
     width: 180px;
     z-index: 1;
     top: 40%;
-        left: 6%;
+    left: 13%;
 }
 
 #selectDiv4Plans{
@@ -697,7 +736,7 @@
     width: 180px;
     z-index: 1;
     top: 40%;
-        left: 6%;
+        left: 13%;
 }
 
 #selectDiv2Plans{
@@ -708,7 +747,7 @@
     width: 180px;
     z-index: 1;
     top: 40%;
-      left: 6%;
+      left: 13%;
 }
 
 #foodItems{
@@ -738,6 +777,119 @@
   }
   .contact-section .contact-detail .panel-body form {
     margin-right: 20px;
+  }
+}
+
+
+.diet-plan {
+  padding: 10em 0 2em 0;
+  margin: 0;
+  width: 100%;
+  background-color: #FBE9E7;
+}
+
+.diet-con {
+  border-bottom: 1px solid #ccc;
+  margin-top: 1.50rem;
+}
+
+.diet-plan .diet-details .diet-con h2 {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #2f3640;
+  position: relative;
+  vertical-align: middle;
+  position: relative;
+}
+
+
+.diet-plan .diet-details .diet-con p {
+  font-size: 1.10rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #2f3640;
+  position: relative;
+  vertical-align: middle;
+  line-height: 30px;
+}
+
+.diet-plan .diet-details .diet-con .listing-bul li {
+  list-style-type: circle;
+  font-size: 1.10rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #2f3640;
+  position: relative;
+  vertical-align: middle;
+  padding-bottom: 5px;
+}
+
+.pagination-nav {
+  margin-top: 2rem;
+}
+
+.pagination-nav .pagination li {
+  width: auto !important;
+}
+
+.pagination-nav .pagination li .page-link {
+  background-color: #FF3D00 !important;
+  border-color: #FF3D00 !important;
+  color: #fff;
+  padding: 10px;
+}
+
+.pagination li i {
+  font-size: 15px !important;
+}
+
+
+.modal-body p {
+  width: 100% !important;
+}
+
+.modal-footer .btn {
+  background-color: #FF3D00;
+  border-color: #FF3D00;
+}
+
+.modal-footer .btn:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+
+.undefined-class{
+    font-size: 8px;
+    font-weight: 800;
+  }
+
+.pagination-nav .pagination li .page-linker {
+    background-color: #FF3D00 !important;
+    border-color: #FF3D00 !important;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    top: 10px;
+    right: 10px;
+}
+
+.page-item:last-child .page-linker {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+
+.page-linker:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+@media screen and (max-width: 992px) {
+  .pricing-table .pricing-col {
+    width: 100% !important;
+  }
+  .modal-dialog {
+    min-width: 100% !important;
   }
 }
 

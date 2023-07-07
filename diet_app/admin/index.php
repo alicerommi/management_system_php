@@ -75,30 +75,18 @@
                                     <span><i class="fa fa-envelope f-s-40 color-danger"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>0</h2>
+                                    <?php 
+                                    $query4 = mysqli_query($conn,"SELECT * FROM `messages` where message_active=1");
+                                    $messagesTotal = mysqli_num_rows($query4); 
+                                    ?>
+                                    <h2><?php echo $messagesTotal ;?></h2>
                                     <p class="m-b-0">User Messages</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                     <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-filter f-s-40 color-primary"></i></span>
-                                </div>
-                                <?php
-                                $query5 = mysqli_query($conn,"SELECT * FROM `planfilter` where planfilter_active=1");
-                                $count5 = mysqli_num_rows($query5); 
-                                ?>
-                                <div class="media-body media-text-right">
-                                    <h2><?php echo $count5; ?></h2>
-                                    <p class="m-b-0">Applied Filters</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  
 
 
                 </div>

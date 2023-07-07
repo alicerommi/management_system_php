@@ -31,8 +31,10 @@ if(isset($_POST['updateItem'])){
 if(isset($_POST['EditPlan'])){
 	$dietplan_id = $_POST['dietplan_id'];
 	$planName = $_POST['planName'];
-	$planDescription = $_POST['planDescription'];
-	$query = mysqli_query($conn,"UPDATE dietplan SET dietplan_description='$planDescription', dietplan_name='$planName' WHERE dietplan_id=$dietplan_id");
+	//$planDescription = $_POST['planDescription'];
+	$planDescription = mysqli_escape_string($conn,$_POST['planDescription']);
+	$planShortDescription = $_POST['planShortDescription'];
+	$query = mysqli_query($conn,"UPDATE dietplan SET dietplan_description='$planDescription', dietplan_name='$planName' ,dietplan_shortdescription ='$planShortDescription' WHERE dietplan_id=$dietplan_id");
 	if($query)
 		header("location:../edit-plan.php?planEdited=1&dietplan_id=".$dietplan_id);
 	else

@@ -6,6 +6,7 @@ $(document).ready(function () {
         $('.page-wrapper').toggleClass('active-wrapper');
     });
 
+
 });
 // Mobile Sidebar
 $(document).ready(function () {

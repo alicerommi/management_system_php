@@ -44,6 +44,31 @@
                            echo '<div class="alert alert-warning">Error in Updating category</div>';
                         }
 
+                        
+
+
+                        if(isset($_GET['restored'])){
+                          if($_GET['restored']==1){
+                            echo '<div class="alert alert-success">The Category Has been restored Successfully</div>';
+                          }else if($_GET['restored']==0){
+                            echo '<div class="alert alert-warning">Error in restoring category</div>';
+                          }
+                        }
+
+                        if(isset($_GET['failed'])){
+                          if($_GET['failed']==0){
+                            echo '<div class="alert alert-warning">You can not delete this category as food item contains in this category</div>';
+                          }
+                        }
+
+
+                      if(isset($_GET['alreadyExists'])){
+                          if($_GET['alreadyExists']==1){
+                            echo '<div class="alert alert-warning">Category with this name is already exists</div>';
+                          }
+                        }
+                        
+
 
                       ?>
                 <div class="row">
@@ -73,7 +98,9 @@
                         <thead>
                             <tr>
                                 <th>Categories Name</th>
+
                                 <th>Date</th>
+                                <th style="width: 90px;">Restore category</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -81,19 +108,31 @@
 
                           <?php
                             //shwo all the categoriess
-                          $query = mysqli_query($conn,"SELECT* FROM category where category_active=1");
+                          $query = mysqli_query($conn,"SELECT* FROM category"); // where category_active=1
                           if(mysqli_num_rows($query)>0){
                               while($row = mysqli_fetch_array($query)){
                                   $category_id = $row['category_id'];
                                   $category_name = $row['category_name'];
+
                                   $category_recordDate = date("d-m-Y",strtotime($row['category_recordDate']));
+                                  $category_active = $row['category_active'];
+                                  $delBtn='';
+                                  $restored  = '';
+                                  if($category_active==1){
+                                        $delBtn = '<a href="actions/delete.php?cate_id='.$category_id.'&action=deactive" class="btn btn-danger"><i class="fa fa-trash"></i></a>';
+                                  }else{
+                                        $restored = '<a href="actions/delete.php?cate_id='.$category_id.'&action=active" class="btn btn-info"><i class="fa fa-share-square-o"></i></a>';
+                                  }
+
                                   $action = '
-                                  <a href="actions/delete.php?cate_id='.$category_id.'" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                  <button class="btn btn-info edit" id="'.$category_id.'" ><i class="fa fa-pencil"></i></button>
-                                    ';
+                                  <button class="btn btn-primary edit" id="'.$category_id.'" ><i class="fa fa-pencil"></i></button>
+                                  '.$delBtn.'
+                                  ';
+
                                   echo '<tr>
                                 <td>'.$category_name.'</td>
                                 <td>'.$category_recordDate.'</td>
+                                 <td>'.$restored.'</td>
                                 <td>'.$action.'</td>
                                </tr>';
                              }

@@ -16,6 +16,29 @@ if(isset($_POST['dietplan_id'])){
 }
 
 
+//for the add plan filter call
+
+if(isset($_POST['dplan_id']) && $_POST['role']){
+
+	$dietplan_id= $_POST['dplan_id'];
+ 	//$filter = 	$_POST['filter'];
+ 	//echo $filter;
+ 	//if($filter=="allowed"){
+ 	$query = "SELECT pf.*,itm.* from  planfilter pf, items itm where pf.planfilter_active=1 and itm.item_id=pf.item_id and pf.dietplan_id=$dietplan_id  order by itm.item_id";
+ //	}else{
+ 	//	 $query = "SELECT pf.*,itm.* from  planfilter pf, items itm where pf.planfilter_active=1 and itm.item_id=pf.item_id and pf.dietplan_id=$dietplan_id and  pf.flag!='allowed'";
+ 	//}
+ 	
+ 	$sql = mysqli_query($conn,$query);
+ 	$array = array();
+ 	while($r = mysqli_fetch_assoc($sql)){
+ 		array_push($array,$r);
+ 	}
+ 	echo json_encode($array);
+
+}
+
+
 if(isset($_POST['item_id'])){
 	$item_id = $_POST['item_id'];
 	$query = mysqli_query($conn,"SELECT* FROM planfilter WHERE item_id = $item_id AND planfilter_active=1");

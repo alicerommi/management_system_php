@@ -605,8 +605,8 @@ ul {
   padding: 0;
   margin: 0; }
 
-li {
-  list-style: none; }
+/*li {
+  list-style: none; }*/
 
 p {
   font-family: 'Poppins', sans-serif;
@@ -4284,5 +4284,57 @@ footer p {
   font-style: normal; }
 
 
+.note-check li {
+  width: 180px !important;
+}
 
+.note-delete,
+.note-add,
+.note-table-popover,
+.note-image-popover,
+.note-link-popover {
+  display: none;
+}
+
+.note-editor.note-frame {
+  position: relative;
+  z-index: 1;
+}
+
+.note-editor {
+  width: 100%;
+}
+
+.note-fontsize .note-btn-group{
+  display: none !important;
+}
+
+.note-insert{
+  display: none !important;
+}
+.note-height{
+display: none !important;
+}
+
+.dropdown-fontname li a span {
+  color: black !important;
+}
+.note-editing-area .note-editable ol{
+  list-style-type: decimal !important; 
+}
+
+.note-editing-area .note-editable ul {
+  list-style-type: circle !important;
+  margin-left: 50px;
+}
+
+
+.note-editor.note-frame .note-editing-area .note-editable {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.note-editable p{
+    color: black !important; 
+}
 /*# sourceMappingURL=style.css.map */
